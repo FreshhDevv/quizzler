@@ -38,6 +38,12 @@ List<String> questions = [
   'A slug\'s blood is green.',
 ];
 
+List<bool> answers = [
+  false,
+  true,
+  true,
+];
+
 int questionNumber = 0;
 
 class _QuizPageState extends State<QuizPage> {
@@ -68,6 +74,13 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(15.0),
             child: ElevatedButton(
               onPressed: () {
+                bool correctAnswer = answers[questionNumber];
+                if (correctAnswer == true) {
+                  print('User got it right.');
+                } else {
+                  print('User got it wrong');
+                }
+
                 setState(() {
                   questionNumber++;
                 });
@@ -91,6 +104,13 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(15.0),
             child: ElevatedButton(
               onPressed: () {
+                bool correctAnswer = answers[questionNumber];
+                if (correctAnswer == false) {
+                  print('User got it right.');
+                } else {
+                  print('User got it wrong');
+                }
+
                 setState(() {
                   questionNumber++;
                 });
