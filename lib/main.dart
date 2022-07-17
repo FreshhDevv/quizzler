@@ -13,9 +13,9 @@ class Quizzler extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.grey.shade900,
         body: const SafeArea(
-          child: const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: const QuizPage(),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: QuizPage(),
           ),
         ),
       ),
@@ -57,7 +57,7 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: ElevatedButton(
-              onPressed: null,
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
               ),
@@ -76,7 +76,7 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: ElevatedButton(
-              onPressed: null,
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 primary: Colors.red,
               ),
