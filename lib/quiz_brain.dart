@@ -18,7 +18,7 @@ class QuizBrain {
         q: 'No piece of square dry paper can be folded in half more than 7 times.',
         a: false),
     Question(
-        q: 'In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
+        q: 'In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered to be sacred a place.',
         a: true),
     Question(
         q: 'The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.',
