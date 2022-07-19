@@ -34,29 +34,31 @@ class QuizPage extends StatefulWidget {
   State<QuizPage> createState() => _QuizPageState();
 }
 
-List<Widget> scoreKeeper = [];
-
-void checkAnswer(bool userPickedAnswer) {
-  bool correctAnswer = quizBrain.getCorrectAnswer();
-
-  if (userPickedAnswer == correctAnswer) {
-    scoreKeeper.add(
-      const Icon(
-        Icons.check,
-        color: Colors.green,
-      ),
-    );
-  } else {
-    scoreKeeper.add(
-      const Icon(
-        Icons.close,
-        color: Colors.red,
-      ),
-    );
-  }
-}
-
 class _QuizPageState extends State<QuizPage> {
+  List<Widget> scoreKeeper = [];
+
+  void checkAnswer(bool userPickedAnswer) {
+    bool correctAnswer = quizBrain.getCorrectAnswer();
+    setState(() {
+      if (userPickedAnswer == correctAnswer) {
+        scoreKeeper.add(
+          const Icon(
+            Icons.check,
+            color: Colors.green,
+          ),
+        );
+      } else {
+        scoreKeeper.add(
+          const Icon(
+            Icons.close,
+            color: Colors.red,
+          ),
+        );
+      }
+      quizBrain.nextQuestion();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -84,10 +86,8 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(15.0),
             child: ElevatedButton(
               onPressed: () {
-                setState(() {
-                  checkAnswer(true);
-                  quizBrain.nextQuestion();
-                });
+                // The user picked true
+                checkAnswer(true);
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
@@ -108,10 +108,8 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(15.0),
             child: ElevatedButton(
               onPressed: () {
-                setState(() {
-                  checkAnswer(false);
-                  quizBrain.nextQuestion();
-                });
+                // The user picked true
+                checkAnswer(false);
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.red,
