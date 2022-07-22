@@ -1,4 +1,3 @@
-import 'package:quizzler/main.dart';
 import 'package:quizzler/question.dart';
 
 class QuizBrain {
